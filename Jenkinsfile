@@ -48,6 +48,8 @@ pipeline {
             sh "jx step git credentials"
             // so we can retrieve the version in later steps
             sh "echo \$(jx-release-version) > VERSION"
+            sh "echo VERSION"
+            sh "git fetch --tags -v"
             sh "mvn versions:set -DnewVersion=\$(cat VERSION)"
           }
           dir ('./charts/demo') {
