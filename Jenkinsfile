@@ -44,7 +44,7 @@ pipeline {
             // ensure we're not on a detached head
             sh "git checkout master"
             sh "git config --global credential.helper store"
-            sh "git config --global https.proxy http://oc-master.vm.esrt.cloud.sbrf.ru:3128"
+            sh "git config --global http.proxy http://oc-master.vm.esrt.cloud.sbrf.ru:3128"
 
             sh "jx step git credentials"
             // so we can retrieve the version in later steps
